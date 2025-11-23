@@ -9,14 +9,14 @@ def working_at(ssn):
     )
 
     cursor=cnx.cursor()
-    query="SELECT pj_id " \
+    query="SELECT pj_id, working_time " \
     "FROM Employee_works_on_Project " \
     "WHERE ee_ssn=%s;"
     values=(ssn,)
     cursor.execute(query, values)
     records=cursor.fetchall()
     for i in records:
-        print("Project: ",i[0])
+        print("Project:",i[0], "working time:", i[1])
         print("\n")
     cursor.close()
     cnx.close() 
