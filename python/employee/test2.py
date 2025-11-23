@@ -1,0 +1,2 @@
+import show_employee as show_employee
+show_employee.show_employee(1234)

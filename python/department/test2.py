@@ -1,0 +1,2 @@
+import show_department
+show_department.show_department(1)

@@ -1,0 +1,2 @@
+import Department_charge_this
+Department_charge_this.department_charge_this(1)

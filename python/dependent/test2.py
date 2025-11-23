@@ -1,0 +1,2 @@
+import show_dependent
+show_dependent.show_dependent(1234)
