@@ -34,3 +34,12 @@ tips: 运行setup_database即可创建新的数据库，另外文件里的test�
     
   
   
+更新1.0：
+  1，修复了setup_database可能无法正常运行的bug
+  2，为所有类型添加了remove和all（显示这个类型下的所有实例）
+  3，美化了所有方法的output
+  4，department的num_of_employee中去掉了print，改成了return。添加了managed_by（可以查看谁在管理这个dep）
+  5，employee中添加了supervising（查看这个supervisor在监视那些employee）
+  6，添加了employee_assists_project（不会自动设置其dep负责此项目），department_charge_project（单独设置一个dep负责一个project）
+  
+  
