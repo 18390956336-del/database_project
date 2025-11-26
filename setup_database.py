@@ -3,7 +3,6 @@ from mysql.connector import Error
 import os
 def setup_database():
     try:
-        # 连接MySQL服务器（不指定数据库）
         cnx = mysql.connector.connect(
             host="localhost",
             user="root",
@@ -16,16 +15,14 @@ def setup_database():
         current_dir = os.path.dirname(os.path.abspath(__file__))
         sql_file_path = os.path.join(current_dir, 'database.sql')
         
-        # 读取SQL文件
         with open(sql_file_path , 'r', encoding='utf-8') as file:
             sql_script = file.read()
         
-        # 分割SQL语句并执行
         sql_commands = sql_script.split(';')
         
         for command in sql_commands:
             command = command.strip()
-            if command:  # 跳过空命令
+            if command:  
                 try:
                     cursor.execute(command)
                     if command.upper().startswith('CREATE DATABASE'):
