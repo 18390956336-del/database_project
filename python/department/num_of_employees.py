@@ -15,7 +15,7 @@ def num_of_employees(dep_id):
     values=(dep_id,)
     cursor.execute(query, values)
     records=cursor.fetchall()
-    for i in records:
-        print(i[0])
     cursor.close()
     cnx.close() 
+    return records[0][0]
+    

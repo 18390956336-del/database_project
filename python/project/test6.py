@@ -1,2 +1,2 @@
-import Department_charge_this
-Department_charge_this.department_charge_this(1)
+import department_charge_this
+department_charge_this.department_charge_this(1)

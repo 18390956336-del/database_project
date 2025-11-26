@@ -1,6 +1,6 @@
 import mysql.connector
 
-def remove(ssn):
+def remove_employee(ssn):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,11 +9,11 @@ def remove(ssn):
     )
 
     cursor=cnx.cursor()
-    query="DELETE FROM Employee " \
+    query="DELETE FROM Project " \
     "WHERE ssn=%s"
     values=(ssn,)
     cursor.execute(query, values)
     cnx.commit()
-    print(f"{ssn} has been deleted")
+    print(f"Project {ssn} has been deleted")
     cursor.close()
     cnx.close()

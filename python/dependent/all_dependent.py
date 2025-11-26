@@ -1,6 +1,6 @@
 import mysql.connector
 
-def show_project(pj_id):
+def all_dependent():
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -10,15 +10,13 @@ def show_project(pj_id):
 
     cursor=cnx.cursor()
     query="SELECT * " \
-    "FROM Project T " \
-    "WHERE T.pj_id=%s;"
-    values=(pj_id,)
-    cursor.execute(query, values)
+    "FROM Dependent;"
+    cursor.execute(query)
     records=cursor.fetchall()
     if(records==[]):
-        print("No such project.")
+        print("No dependents here.")    
     else:
         for i in records:
-            print(i)
+            print(f"{i[0]}'s dependent {i[1]}: {i[2]}, born on {i[3]}")
     cursor.close()
     cnx.close() 

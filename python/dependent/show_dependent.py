@@ -15,7 +15,10 @@ def show_dependent(ssn):
     values=(ssn,)
     cursor.execute(query, values)
     records=cursor.fetchall()
-    for i in records:
-        print(i)
+    if(records==[]):
+        print("No such dependent.")
+    else:
+        for i in records:
+            print(i)
     cursor.close()
     cnx.close() 

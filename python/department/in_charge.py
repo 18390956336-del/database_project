@@ -16,7 +16,6 @@ def in_charge(dep_id):
     cursor.execute(query, values)
     records=cursor.fetchall()
     for i in records:
-        print("Project: ",i[0])
-        print("\n")
+        print("Project",i[0])
     cursor.close()
     cnx.close() 

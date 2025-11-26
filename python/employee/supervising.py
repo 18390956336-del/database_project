@@ -1,6 +1,6 @@
 import mysql.connector
 
-def show_project(pj_id):
+def supervising(ssn):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,16 +9,17 @@ def show_project(pj_id):
     )
 
     cursor=cnx.cursor()
-    query="SELECT * " \
-    "FROM Project T " \
-    "WHERE T.pj_id=%s;"
-    values=(pj_id,)
+    query="SELECT ssn " \
+    "FROM Employee " \
+    "WHERE Supervisor_ssn=%s;"
+    values=(ssn,)
     cursor.execute(query, values)
     records=cursor.fetchall()
     if(records==[]):
-        print("No such project.")
+        print("This employee is not a supervisor.")
     else:
+        print("Supervising:")
         for i in records:
-            print(i)
+            print(i[0])
     cursor.close()
     cnx.close() 

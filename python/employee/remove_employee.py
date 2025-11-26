@@ -1,6 +1,6 @@
 import mysql.connector
 
-def add_department(id, name, num_of_locations):
+def remove_employee(ssn):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,10 +9,11 @@ def add_department(id, name, num_of_locations):
     )
 
     cursor=cnx.cursor()
-    query="INSERT INTO Department(dep_id, num_of_locations, dep_name) VALUES (%s, %s, %s);"
-    values=(id, num_of_locations, name)
+    query="DELETE FROM Employee " \
+    "WHERE ssn=%s"
+    values=(ssn,)
     cursor.execute(query, values)
     cnx.commit()
-    print(f"Department {id} is added!")
+    print(f"Employee {ssn} has been deleted")
     cursor.close()
     cnx.close()

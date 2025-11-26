@@ -11,7 +11,7 @@ def setup_database():
         
         cursor = cnx.cursor()
         
-        print("seting up database...")
+        print("setting up database...")
         current_dir = os.path.dirname(os.path.abspath(__file__))
         sql_file_path = os.path.join(current_dir, 'database.sql')
         

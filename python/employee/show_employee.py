@@ -15,7 +15,10 @@ def show_employee(ssn):
     values=(ssn,)
     cursor.execute(query, values)
     records=cursor.fetchall()
-    for i in records:
-        print(i)
+    if records==[]:
+        print("No such employee")
+    else:
+        for i in records:
+            print(i)
     cursor.close()
     cnx.close() 

@@ -1,0 +1,2 @@
+import all_department
+all_department.all_department()

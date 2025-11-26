@@ -23,6 +23,5 @@ def employee_working_this(pj_id):
     records=cursor.fetchall()
     for i in records:
         print(i[0], i[1], i[2], "has worked for", i[3], "hours")
-        print("\n")
     cursor.close()
     cnx.close() 

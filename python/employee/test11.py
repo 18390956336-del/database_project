@@ -1,0 +1,5 @@
+import set_employee_supervisor
+import supervising
+
+set_employee_supervisor.set_employee_supervisor(1234, 1235)
+supervising.supervising(1235)

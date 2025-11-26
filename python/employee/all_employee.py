@@ -1,6 +1,6 @@
 import mysql.connector
 
-def department_charge_this(pj_id):
+def all_employee():
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,13 +9,14 @@ def department_charge_this(pj_id):
     )
 
     cursor=cnx.cursor()
-    query="SELECT dep_id " \
-    "FROM Department_in_charge_Project " \
-    "WHERE pj_id=%s"
-    values=(pj_id,)
-    cursor.execute(query, values)
+    query="SELECT * " \
+    "FROM Employee;"
+    cursor.execute(query)
     records=cursor.fetchall()
-    for i in records:
-        print(f"Department {i[0]}")
+    if(records==[]):
+        print("No employees here.") 
+    else:
+        for i in records:
+            print(i)
     cursor.close()
     cnx.close() 

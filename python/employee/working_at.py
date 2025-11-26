@@ -16,7 +16,7 @@ def working_at(ssn):
     cursor.execute(query, values)
     records=cursor.fetchall()
     for i in records:
-        print("Project:",i[0], "working time:", i[1])
+        print("Project:", i[0], ".", "working time:", i[1])
         print("\n")
     cursor.close()
     cnx.close() 

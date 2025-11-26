@@ -1,0 +1,2 @@
+import remove_employee
+remove_employee.remove_employee(1234)

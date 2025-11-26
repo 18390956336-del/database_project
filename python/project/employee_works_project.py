@@ -1,4 +1,5 @@
 import mysql.connector
+#此方法会自动这个员工的部门负责这个项目
 
 def employee_works_project(ssn, pj_id):
     cnx=mysql.connector.connect(
