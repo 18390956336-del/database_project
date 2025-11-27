@@ -10,7 +10,7 @@ def remove_department(ssn):
 
     cursor=cnx.cursor()
     query="DELETE FROM Department " \
-    "WHERE ssn=%s"
+    "WHERE dep_id=%s"
     values=(ssn,)
     cursor.execute(query, values)
     cnx.commit()

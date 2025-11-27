@@ -10,7 +10,7 @@ def remove_project(ssn):
 
     cursor=cnx.cursor()
     query="DELETE FROM Project " \
-    "WHERE ssn=%s"
+    "WHERE pj_id=%s"
     values=(ssn,)
     cursor.execute(query, values)
     cnx.commit()

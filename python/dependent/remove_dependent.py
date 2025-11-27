@@ -10,7 +10,7 @@ def remove_dependent(ssn):
 
     cursor=cnx.cursor()
     query="DELETE FROM Dependent " \
-    "WHERE ssn=%s"
+    "WHERE employee_ssn=%s"
     values=(ssn,)
     cursor.execute(query, values)
     cnx.commit()
