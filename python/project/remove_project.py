@@ -1,6 +1,6 @@
 import mysql.connector
 
-def remove_employee(ssn):
+def remove_project(ssn):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
