@@ -1,6 +1,6 @@
 import mysql.connector
 
-def remove_department(ssn):
+def remove_dependent(ssn):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
