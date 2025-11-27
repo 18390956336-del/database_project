@@ -41,5 +41,22 @@ tips: 运行setup_database即可创建新的数据库，另外文件里的test�
   4，department的num_of_employee中去掉了print，改成了return。添加了managed_by（可以查看谁在管理这个dep）
   5，employee中添加了supervising（查看这个supervisor在监视那些employee）
   6，添加了employee_assists_project（不会自动设置其dep负责此项目），department_charge_project（单独设置一个dep负责一个project）
+
+
   
-  
+更行2.0：
+  1，添加了location，功能：
+    a. 加一个location
+    b. 显示所有地址
+    c. 显示在这个building下的所有project
+    d. 显示在这个date下发生的所有project
+    e. 移除
+    f. 设置对应project发生的时间（所有pj_id是这个project的地址的date全部设置为此日期）
+    g. 输入pj_id，输出其所有的location
+
+  2，为project加入了type（harmful chemical, weather-related等多种类型）
+
+  3，为project加入了contractor，并支持一键查询所有已外包项目(all_contracted_project)
+
+  4，修改了部分project的输出（其它部分的输出未变）
+    
