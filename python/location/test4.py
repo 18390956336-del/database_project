@@ -1,2 +1,2 @@
 import set_date
-set_date.set_date("BuildingA", "123 room", "2/3/2025")
+set_date.set_date("1", "2/3/2025")

@@ -1,6 +1,6 @@
 import mysql.connector
 
-def set_date(building_name, address, date):
+def set_date(pj_id, date):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -11,11 +11,11 @@ def set_date(building_name, address, date):
     cursor=cnx.cursor()
     query="UPDATE Location "\
     "SET date=%s "\
-    "WHERE building_name=%s AND address=%s;"
-    values=(date, building_name, address)
+    "WHERE pj_id=%s;"
+    values=(date, pj_id)
     cursor.execute(query, values)
     cnx.commit()
-    print(f"{building_name} at {address} will have a project at date: {date}")
+    print(f"Project {pj_id}'s date: {date}")
     cursor.close()
     cnx.close()
 
