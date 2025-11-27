@@ -25,7 +25,9 @@ CREATE TABLE Employee(
 
 CREATE TABLE Project(
     pj_id INT PRIMARY KEY,
-    pj_name VARCHAR(100) NOT NULL
+    pj_name VARCHAR(100) NOT NULL,
+    type ENUM("repair", "clean", "decoration", "weather_related", "harmful_chemicals", "mixture") NOT NULL,
+    contractor VARCHAR(100)
 );
 
 CREATE TABLE Dependent(
@@ -50,5 +52,14 @@ CREATE TABLE Department_in_charge_Project(
     pj_id INT,
     PRIMARY KEY (dep_id, pj_id),
     FOREIGN KEY (dep_id) REFERENCES Department(dep_id),
+    FOREIGN KEY (pj_id) REFERENCES Project(pj_id)
+);
+
+CREATE TABLE Location(
+    building_name VARCHAR(100) NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    pj_id INT NOT NULL,
+    date VARCHAR(100),
+    PRIMARY KEY (building_name, address),
     FOREIGN KEY (pj_id) REFERENCES Project(pj_id)
 );

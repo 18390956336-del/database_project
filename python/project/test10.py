@@ -1,0 +1,2 @@
+import all_contracted_project
+all_contracted_project.all_contracted_project()

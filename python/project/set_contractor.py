@@ -1,6 +1,6 @@
 import mysql.connector
 
-def add_project(pj_id, name, type):
+def set_contractor(pj_id, contractor):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,10 +9,12 @@ def add_project(pj_id, name, type):
     )
 
     cursor=cnx.cursor()
-    query="INSERT INTO Project(pj_id, pj_name, type) VALUES (%s, %s, %s);"
-    values=(pj_id, name, type)
+    query="UPDATE Project "\
+    "SET contractor=%s "\
+    "WHERE pj_id=%s;"
+    values=(contractor, pj_id)
     cursor.execute(query, values)
     cnx.commit()
-    print(f"Project {pj_id} is added!")
+    print(f"Project {pj_id} is set to contractor {contractor}")
     cursor.close()
     cnx.close()

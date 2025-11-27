@@ -1,0 +1,2 @@
+import show_location
+show_location.show_location(1)

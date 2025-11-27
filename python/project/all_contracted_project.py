@@ -1,6 +1,6 @@
 import mysql.connector
 
-def all_project():
+def all_contracted_project():
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,14 +9,15 @@ def all_project():
     )
 
     cursor=cnx.cursor()
-    query="SELECT pj_id, pj_name, type " \
-    "FROM Project;"
+    query="SELECT * " \
+    "FROM Project " \
+    "WHERE contractor IS NOT NULL;"
     cursor.execute(query)
     records=cursor.fetchall()
     if(records==[]):
         print("No projects here.")
     else:
         for i in records:
-            print(f"{i[2]} Project {i[0]}: {i[1]}")
+            print(f"{i[2]} Project {i[0]}, {i[1]}: {i[3]}")
     cursor.close()
     cnx.close() 

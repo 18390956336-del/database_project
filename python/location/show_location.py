@@ -1,6 +1,6 @@
 import mysql.connector
 
-def all_project():
+def show_location(pj_id):
     cnx=mysql.connector.connect(
         host="localhost",
         user="root",
@@ -9,14 +9,16 @@ def all_project():
     )
 
     cursor=cnx.cursor()
-    query="SELECT pj_id, pj_name, type " \
-    "FROM Project;"
-    cursor.execute(query)
+    query="SELECT * " \
+    "FROM Location T " \
+    "WHERE T.pj_id=%s;"
+    values=(pj_id,)
+    cursor.execute(query, values)
     records=cursor.fetchall()
     if(records==[]):
-        print("No projects here.")
+        print("Nothing")
     else:
         for i in records:
-            print(f"{i[2]} Project {i[0]}: {i[1]}")
+            print(f"{i[0]},", i[1])
     cursor.close()
     cnx.close() 
